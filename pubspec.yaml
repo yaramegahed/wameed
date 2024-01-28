@@ -38,6 +38,8 @@ dependencies:
   flutter_screenutil: ^5.9.0
   curved_navigation_bar: ^1.0.3
   flutter_svg: ^2.0.9
+  booking_calendar: ^1.1.10
+  horizontal_calendar: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -95,6 +97,7 @@ flutter:
         - asset: assets/fonts/poppins/Poppins-bold.ttf
         - asset: assets/fonts/poppins/Poppins-Regular.ttf
         - asset: assets/fonts/poppins/Poppins-Light.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

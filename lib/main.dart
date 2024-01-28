@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wameed/views/appointment/appointment.dart';
 
 import 'package:wameed/views/home/home.dart';
 import 'package:wameed/views/list_doctor/doctor.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
             colorScheme: ColorScheme.fromSwatch(primarySwatch: getMyMaterialColor(),backgroundColor: Colors.white,)
         ),
-        home:  const Doctor(),
+        home:   Appointment(),
       )
     );
   }

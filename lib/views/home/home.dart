@@ -294,14 +294,14 @@ class _HomeState extends State<Home> {
           Column(
             children: [
               SvgPicture.asset("assets/icons/svg/profile.svg"),
-              SizedBox(height: 4,),
+              SizedBox(height: 4.h,),
               Text("profile", style: TextStyle(color: Colors.black.withOpacity(.37),fontFamily: "poppins",fontSize: 12)),
             ],
           ),
         ],
         color: Colors.black.withOpacity(.25),
-        buttonBackgroundColor: Color(0xffFAFAFA),
-        backgroundColor: Color(0xffBFDFDF8C),
+        buttonBackgroundColor: const Color(0xffFAFAFA),
+        backgroundColor: const Color(0xffBFDFDF8C),
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),
         onTap: (index) {},
