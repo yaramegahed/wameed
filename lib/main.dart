@@ -5,6 +5,8 @@ import 'package:wameed/views/appointment/appointment.dart';
 
 import 'package:wameed/views/home/home.dart';
 import 'package:wameed/views/list_doctor/doctor.dart';
+import 'package:wameed/views/motivzone/motiv_zone.dart';
+import 'package:wameed/views/payment_card/payment.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
             colorScheme: ColorScheme.fromSwatch(primarySwatch: getMyMaterialColor(),backgroundColor: Colors.white,)
         ),
-        home:   Appointment(),
+        home:   const Zone(),
       )
     );
   }

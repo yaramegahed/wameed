@@ -182,7 +182,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsetsDirectional.only(
                                 start: 6.w, end: 16.w, top: 24.h, bottom: 22.h),
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.r),
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
