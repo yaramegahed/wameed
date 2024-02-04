@@ -40,6 +40,9 @@ dependencies:
   flutter_svg: ^2.0.9
   booking_calendar: ^1.1.10
   horizontal_calendar: ^1.1.2
+  curved_labeled_navigation_bar: ^2.0.2
+  circular_bottom_navigation: ^2.3.0
+  date_picker_timeline: ^1.2.5
 
 dev_dependencies:
   flutter_test:

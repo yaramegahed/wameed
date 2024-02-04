@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wameed/core/design/app_field_button.dart';
 import 'package:wameed/core/design/app_filled.dart';
+import 'package:wameed/views/home/home.dart';
+import 'package:wameed/views/payment_card/payment.dart';
+import '../../core/design/app_dialog.dart';
 import '../../core/design/arrow_back_button.dart';
 import '../../main.dart';
 
@@ -80,7 +83,8 @@ class _AppointmentState extends State<Appointment> {
                       SizedBox(
                           height: 66.h,
                           child: ListView.separated(
-                            separatorBuilder: (BuildContext context, int index) {
+                            separatorBuilder:
+                                (BuildContext context, int index) {
                               return const SizedBox(width: 16);
                             },
                             itemCount: 365,
@@ -91,8 +95,8 @@ class _AppointmentState extends State<Appointment> {
                                 onTap: () {
                                   setState(() {
                                     currentDateSelectedIndex = index;
-                                    selectedDate =
-                                        DateTime.now().add(Duration(days: index));
+                                    selectedDate = DateTime.now()
+                                        .add(Duration(days: index));
                                   });
                                 },
                                 child: Container(
@@ -121,10 +125,10 @@ class _AppointmentState extends State<Appointment> {
                                         style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w600,
-                                            color:
-                                                currentDateSelectedIndex == index
-                                                    ? Colors.grey.shade500
-                                                    : getMyMaterialColor()),
+                                            color: currentDateSelectedIndex ==
+                                                    index
+                                                ? Colors.grey.shade500
+                                                : Theme.of(context).primaryColor),
                                       ),
                                       const SizedBox(
                                         height: 4,
@@ -137,10 +141,10 @@ class _AppointmentState extends State<Appointment> {
                                             .toString(),
                                         style: TextStyle(
                                             fontSize: 14,
-                                            color:
-                                                currentDateSelectedIndex == index
-                                                    ? Colors.grey.shade500
-                                                    : getMyMaterialColor()),
+                                            color: currentDateSelectedIndex ==
+                                                    index
+                                                ? Colors.grey.shade500
+                                                : Theme.of(context).primaryColor),
                                       ),
                                     ],
                                   ),
@@ -159,11 +163,12 @@ class _AppointmentState extends State<Appointment> {
                             fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(height: 16),
-                  
+
                       SizedBox(
                         height: 150.h,
                         child: ListView.separated(
-                            separatorBuilder: (BuildContext context, int index) {
+                            separatorBuilder:
+                                (BuildContext context, int index) {
                               return const SizedBox(width: 16);
                             },
                             itemCount: 24,
@@ -191,18 +196,18 @@ class _AppointmentState extends State<Appointment> {
                                                   offset: Offset(3, 3),
                                                   blurRadius: 5)
                                             ],
-                                            color:
-                                                currentDateSelectedIndex == index
-                                                    ? getMyMaterialColor()
-                                                        .withOpacity(.74)
-                                                    : Colors.grey.shade100),
+                                            color: currentDateSelectedIndex ==
+                                                    index
+                                                ? Theme.of(context).primaryColor
+                                                    .withOpacity(.74)
+                                                : Colors.grey.shade100),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
                                             Icon(
                                               CupertinoIcons.clock,
-                                              color: getMyMaterialColor()
+                                              color: Theme.of(context).primaryColor
                                                   .withOpacity(.60),
                                               size: 20,
                                             ),
@@ -227,18 +232,18 @@ class _AppointmentState extends State<Appointment> {
                                                   offset: Offset(3, 3),
                                                   blurRadius: 5)
                                             ],
-                                            color:
-                                                currentDateSelectedIndex == index
-                                                    ? getMyMaterialColor()
-                                                        .withOpacity(.74)
-                                                    : Colors.grey.shade100),
+                                            color: currentDateSelectedIndex ==
+                                                    index
+                                                ? Theme.of(context).primaryColor
+                                                    .withOpacity(.74)
+                                                : Colors.grey.shade100),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
                                             Icon(
                                               CupertinoIcons.clock,
-                                              color: getMyMaterialColor()
+                                              color: Theme.of(context).primaryColor
                                                   .withOpacity(.60),
                                               size: 20,
                                             ),
@@ -263,18 +268,18 @@ class _AppointmentState extends State<Appointment> {
                                                   offset: Offset(3, 3),
                                                   blurRadius: 5)
                                             ],
-                                            color:
-                                                currentDateSelectedIndex == index
-                                                    ? getMyMaterialColor()
-                                                        .withOpacity(.74)
-                                                    : Colors.grey.shade100),
+                                            color: currentDateSelectedIndex ==
+                                                    index
+                                                ? Theme.of(context).primaryColor
+                                                    .withOpacity(.74)
+                                                : Colors.grey.shade100),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
                                             Icon(
                                               CupertinoIcons.clock,
-                                              color: getMyMaterialColor()
+                                              color: Theme.of(context).primaryColor
                                                   .withOpacity(.60),
                                               size: 20,
                                             ),
@@ -300,10 +305,10 @@ class _AppointmentState extends State<Appointment> {
                       const SizedBox(
                         height: 16,
                       ),
-                      const Text(
+                      Text(
                         "Full Name",
                         style: TextStyle(
-                            color: Colors.grey,
+                            color: const Color(0Xff000000).withOpacity(.51),
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             fontFamily: "poppins"),
@@ -313,14 +318,15 @@ class _AppointmentState extends State<Appointment> {
                       ),
                       const AppFilled(
                         text: "",
+                        height: 48,
                       ),
                       SizedBox(
                         height: 24.h,
                       ),
-                      const Text(
+                      Text(
                         "Age",
                         style: TextStyle(
-                            color: Colors.grey,
+                            color: const Color(0Xff000000).withOpacity(.51),
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             fontFamily: "poppins"),
@@ -344,12 +350,65 @@ class _AppointmentState extends State<Appointment> {
                       SizedBox(
                         height: 12.h,
                       ),
-                      const AppFilled(
-                        text: "Choose payment method",
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PaymentView(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          height: 48.h,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xff39A7A7).withOpacity(.21)),
+                            color: const Color(0xffF2F2F2).withOpacity(.46),
+                            borderRadius: BorderRadius.circular(8.r),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Choose payment method",
+                                  style: TextStyle(
+                                    fontFamily: "poppins",
+                                      color: const Color(0xff000000).withOpacity(.31),
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                const Spacer(),
+                                 Icon(Icons.arrow_forward_ios,color: const Color(0xff000000).withOpacity(.60),)
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
-                      SizedBox(height: 31.h,),
-                      const AppFilledButton(text: "Choose payment method"),
-                      SizedBox(height: 31.h,),
+                      SizedBox(
+                        height: 31.h,
+                      ),
+                       AppFilledButton(
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AppDialog(
+                                  buttonText: "Back To Home",
+                                  text: "Your appointment",
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                        builder: (context) => const HomeView()));
+                                  },
+                                );
+                              });
+                        },
+                          text: "Set an appointment", fontFamily: "poppins"),
+                      SizedBox(
+                        height: 31.h,
+                      ),
                     ],
                   ),
                 ))));

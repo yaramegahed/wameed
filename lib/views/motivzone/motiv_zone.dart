@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/design/arrow_back_button.dart';
 import '../../core/design/colors.dart';
@@ -63,44 +64,40 @@ class Zone extends StatelessWidget {
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                                color: Theme.of(context)
-                                    .primaryColor
-                                    .withOpacity(.29),
-                                blurRadius: 8,
-                                spreadRadius: 2,
-                                offset: const Offset(4, 4)),
+                                color: const Color(0xff000000).withOpacity(.42),
+                                blurRadius: 11,
+                                offset: const Offset(3, 4)),
                             BoxShadow(
-                                color: Theme.of(context)
-                                    .primaryColor
-                                    .withOpacity(.29),
+                                color: const Color(0xff39A7A7).withOpacity(.60),
                                 blurRadius: 8,
-                                spreadRadius: 2,
-                                offset: const Offset(4, 4)),
+                                offset: const Offset(-2,-2)),
+                            BoxShadow(
+                                color: const Color(0xff39A7A7).withOpacity(.60),
+                                blurRadius: 8,
+                                offset: const Offset(2, 2)),
                           ]),
                       child: Column(children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const Spacer(),
                             Container(
                               width: 106.w,
                               height: 26.h,
-                              padding: EdgeInsetsDirectional.only(
-                                  start: 250.w,
-                                  end: 24.w,
-                                  top: 24.h,
-                                  bottom: 56.h),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12.r),
                                 color: Theme.of(context)
                                     .primaryColor
                                     .withOpacity(.29),
                               ),
-                              child: const Text("Motivation",
-                                  style: TextStyle(
-                                      fontSize: 16,
+                              child: Center(
+                                child: Text("Motivation",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w600,
-                                      fontFamily: "poppins")),
+                                      fontFamily: "poppins",
+                                    )),
+                              ),
                             ),
                           ],
                         ),
@@ -110,17 +107,21 @@ class Zone extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(width: 38.w,),
+                            SizedBox(
+                              width: 38.w,
+                            ),
                             Text(
-                                "When your healthy self is strong enough\n"
-                                "to deal with all that comes your way in life,\n"
-                                "your eating disorder self will no longer\n"
-                                "be useful or necessary.\n"
+                                "When your healthy\nself is strong enough\nto deal with all that\ncomes your way in life,\nyour eating disorder self will no longer\nbe useful or necessary.\n"
                                 "- Carolyn Costin",
                                 style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "poppins",
                                     color: Theme.of(context).primaryColor)),
                             const Spacer(),
-                            Icon(Icons.arrow_forward_ios,color: Colors.black.withOpacity(.19)),
+                            Icon(Icons.arrow_forward_ios,
+                                color: Colors.black.withOpacity(.19)),
+                            SizedBox(width: 16.w,)
                           ],
                         ),
                       ]),
@@ -138,7 +139,7 @@ class Zone extends StatelessWidget {
                         Text(
                           "Swipe Left & right For next",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontFamily: "poppins",
                             fontWeight: FontWeight.w600,
                             color: Theme.of(context).primaryColor,
