@@ -8,8 +8,8 @@ import 'package:wameed/main.dart';
 import '../../core/design/arrow_back_button.dart';
 import '../../core/design/colors.dart';
 import '../../core/design/text.logo.dart';
-import '../chats/chats_view.dart';
-import '../profile/profile_view.dart';
+import '../chats/view.dart';
+import '../profile/view.dart';
 import '../scan/view.dart';
 
 class HomeView extends StatefulWidget {
@@ -367,55 +367,24 @@ class _HomeState extends State<HomeView> {
           ),
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        iconPadding: 30,
-        height: 99.h,
-        // key: _bottomNavigationKey,
-        index: 1,
-        items: [
-          CurvedNavigationBarItem(
-
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SvgPicture.asset("assets/icons/svg/home.svg"),
-            ),
-            label: 'Home',
-          ),
-          CurvedNavigationBarItem(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SvgPicture.asset("assets/icons/svg/scan.svg"),
-            ),
-            label: 'Scan',
-          ),
-          CurvedNavigationBarItem(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SvgPicture.asset("assets/icons/svg/chat.svg"),
-            ),
-            label: 'Chat',
-          ),
-          CurvedNavigationBarItem(
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: SvgPicture.asset("assets/icons/svg/profile.svg"),
-            ),
-            label: 'Personal',
-          ),
-        ],
-        color: const Color(0xffF9F9F9).withOpacity(.88),
-        buttonBackgroundColor: const Color(0xffFAFAFA),
-        backgroundColor: Colors.transparent,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 600),
-        onTap: (index) {
-          setState(() {
-            _page = index;
-          });
-        },
-        letIndexChange: (index) => true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: Colors.white,
+        tooltip: "increment",
+        child: const Icon(Icons.qr_code_scanner),
       ),
-
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(onPressed: (){}, icon: Icon(Icons.home)),
+            IconButton(onPressed: (){}, icon: Icon(Icons.chat)),
+            IconButton(onPressed: (){}, icon: Icon(Icons.person)),
+          ],
+        ),
+      )
     );
   }
 

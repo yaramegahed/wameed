@@ -1,20 +1,23 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wameed/core/e.dart';
-import 'package:wameed/core/ex.dart';
-import 'package:wameed/core/ex1.dart';
-import 'package:wameed/views/after_scan/after_scan.dart';
-import 'package:wameed/views/appointment/appointment.dart';
-import 'package:wameed/views/chat_detail/chatd_view.dart';
-import 'package:wameed/views/chats/chats_view.dart';
+import 'package:wameed/views/after_scan/view.dart';
+import 'package:wameed/views/appointment/view.dart';
+import 'package:wameed/views/call/view.dart';
+import 'package:wameed/views/chat_detail/view.dart';
+import 'package:wameed/views/chats/view.dart';
 
-import 'package:wameed/views/home/home.dart';
-import 'package:wameed/views/list_doctor/doctor.dart';
-import 'package:wameed/views/motivzone/motiv_zone.dart';
-import 'package:wameed/views/payment_card/payment.dart';
-import 'package:wameed/views/profile/profile_view.dart';
+import 'package:wameed/views/home/view.dart';
+import 'package:wameed/views/language_setting/view.dart';
+import 'package:wameed/views/list_doctor/view.dart';
+import 'package:wameed/views/motivzone/view.dart';
+import 'package:wameed/views/payment_card/view.dart';
+import 'package:wameed/views/profile/view.dart';
+import 'package:wameed/views/receipt/view.dart';
+import 'package:wameed/views/reservation_receipts/view.dart';
 import 'package:wameed/views/scan/view.dart';
+import 'package:wameed/views/setting_patient/view.dart';
+import 'package:wameed/views/vodafone_cash/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +47,7 @@ class MyApp extends StatelessWidget {
               background: Color(0xff39A7A7),
             )
         ),
-        home: const ChatView(),
+        home: const ReceiptView(),
       )
     );
   }

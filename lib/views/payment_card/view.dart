@@ -20,13 +20,12 @@ class _PaymentState extends State<PaymentView> {
     return Scaffold(
         appBar: AppBar(
           leading: const ArrowBackButton(),
-          title: const Center(
-            child: Text("Payment",
-                style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: "poppins",
-                    fontWeight: FontWeight.w600)),
-          ),
+          title: Text("Payment",
+              style: TextStyle(
+                  fontSize: 24.sp,
+                  fontFamily: "poppins",
+                  fontWeight: FontWeight.w600)),
+          centerTitle: true,
         ),
         body: SafeArea(
             child: Padding(
@@ -70,15 +69,15 @@ class _PaymentState extends State<PaymentView> {
                               child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Row(
+                                     Row(
                                       children: [
                                         Text("Dr. John Smith",
                                             style: TextStyle(
-                                                fontSize: 18,
+                                                fontSize: 18.sp,
                                                 fontFamily: "inter",
                                                 fontWeight: FontWeight.w600)),
-                                        Spacer(),
-                                        Text("5.00")
+                                        const Spacer(),
+                                        Text("5.00",style: TextStyle(fontSize: 16.sp,fontFamily: "poppins",fontWeight: FontWeight.w600),),
                                       ],
                                     ),
                                     SizedBox(
@@ -88,7 +87,7 @@ class _PaymentState extends State<PaymentView> {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontFamily: "poppins",
-                                            fontSize: 12,
+                                            fontSize: 12.sp,
                                             color:
                                                 Colors.black.withOpacity(.56))),
                                     SizedBox(
@@ -96,7 +95,7 @@ class _PaymentState extends State<PaymentView> {
                                     ),
                                     Row(
                                       children: [
-                                        const Text("4.6"),
+                                        Text("4.6",style: TextStyle(fontSize: 16.sp,fontFamily: "poppins",fontWeight: FontWeight.w600),),
                                         SizedBox(
                                           width: 4.w,
                                         ),
@@ -112,10 +111,10 @@ class _PaymentState extends State<PaymentView> {
                       SizedBox(
                         height: 26.h,
                       ),
-                      const Text(
+                       Text(
                         "Payment Method",
                         style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontFamily: "poppins",
                             fontWeight: FontWeight.w600),
                       ),
@@ -157,8 +156,8 @@ class _PaymentState extends State<PaymentView> {
                               });
                             },
                             child: Container(
-                              height: 60,
-                              width: 98,
+                              height: 60.h,
+                              width: 98.w,
                               decoration: BoxDecoration(
                                 border: Border.all(
                                   color:
@@ -212,7 +211,7 @@ class _PaymentState extends State<PaymentView> {
                               Text(
                                 "",
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontFamily: "poppins",
                                     color: const Color(0xff000000)
                                         .withOpacity(.47),
@@ -231,7 +230,7 @@ class _PaymentState extends State<PaymentView> {
                             color: const Color(0xff000000).withOpacity(.48),
                             fontFamily: "poppins",
                             fontWeight: FontWeight.w600,
-                            fontSize: 16),
+                            fontSize: 16.sp),
                       ),
                       SizedBox(
                         height: 16.h,
@@ -254,7 +253,7 @@ class _PaymentState extends State<PaymentView> {
                               Text(
                                 "",
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 14.sp,
                                     fontFamily: "poppins",
                                     color: const Color(0xff000000)
                                         .withOpacity(.47),
@@ -279,7 +278,7 @@ class _PaymentState extends State<PaymentView> {
                                         .withOpacity(.48),
                                     fontFamily: "poppins",
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 16),
+                                    fontSize: 16.sp),
                               ),
                               SizedBox(
                                 height: 16.h,
@@ -302,7 +301,7 @@ class _PaymentState extends State<PaymentView> {
                                       Text(
                                         "",
                                         style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: 14.sp,
                                             fontFamily: "poppins",
                                             color: const Color(0xff000000)
                                                 .withOpacity(.47),
@@ -350,7 +349,7 @@ class _PaymentState extends State<PaymentView> {
                                       Text(
                                         "",
                                         style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: 14.sp,
                                             fontFamily: "poppins",
                                             color: const Color(0xff000000)
                                                 .withOpacity(.47),
@@ -366,7 +365,7 @@ class _PaymentState extends State<PaymentView> {
                       ),
                       const Spacer(),
                       AppFilledButton(
-                          height: 54,
+                          height: 54.h,
                           text: "Confirm",
                           fontFamily: "poppins",
                           onPressed: () {

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wameed/core/design/app_field_button.dart';
 
 import '../../core/design/colors.dart';
-import '../payment_card/payment.dart';
+import '../payment_card/view.dart';
 
 class ScanView extends StatefulWidget {
   const ScanView({super.key});

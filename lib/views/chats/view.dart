@@ -5,9 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:wameed/core/design/chatuser.dart';
 
-import '../chat_detail/chatd_view.dart';
-import '../home/home.dart';
-import '../profile/profile_view.dart';
+import '../chat_detail/view.dart';
+import '../home/view.dart';
+import '../profile/view.dart';
 import '../scan/view.dart';
 
 class ChatView extends StatefulWidget {
@@ -84,7 +84,7 @@ class _ChatViewState extends State<ChatView> {
                 itemCount: chatUsers.length,
                 itemBuilder: (context, index)=> InkWell(
                   onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChatDetail(),));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChatDetail(),));
                   },
                   child: Container(
                     height: 72.h,
