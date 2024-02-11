@@ -11,11 +11,11 @@ import 'package:wameed/views/home/view.dart';
 import 'package:wameed/views/language_setting/view.dart';
 import 'package:wameed/views/list_doctor/view.dart';
 import 'package:wameed/views/motivzone/view.dart';
+import 'package:wameed/views/patiant_review/view.dart';
 import 'package:wameed/views/payment_card/view.dart';
 import 'package:wameed/views/profile/view.dart';
 import 'package:wameed/views/receipt/view.dart';
 import 'package:wameed/views/reservation_receipts/view.dart';
-import 'package:wameed/views/scan/view.dart';
 import 'package:wameed/views/setting_patient/view.dart';
 import 'package:wameed/views/vodafone_cash/view.dart';
 
@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             color: Colors.white,
+            titleSpacing: 0,
             elevation: 0.0
           ),
           scaffoldBackgroundColor: Colors.white,
@@ -47,8 +48,9 @@ class MyApp extends StatelessWidget {
               background: Color(0xff39A7A7),
             )
         ),
-        home: const ReceiptView(),
-      )
+        home: const ChatDetailView(),
+      ),
+
     );
   }
 }

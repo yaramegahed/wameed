@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wameed/views/voafone_cash2/view.dart';
 
-import '../../core/design/app_dialog.dart';
-import '../../core/design/app_field_button.dart';
 import '../../core/design/arrow_back_button.dart';
 
 class VodafoneView extends StatefulWidget {
@@ -14,7 +12,7 @@ class VodafoneView extends StatefulWidget {
 }
 
 class _PaymentState extends State<VodafoneView> {
-  int selectedContainerIndex = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -136,57 +134,40 @@ class _PaymentState extends State<VodafoneView> {
                       ),
                       Row(
                         children: [
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedContainerIndex = 0;
-                              });
-                            },
-                            child: Container(
-                              height: 60.h,
-                              width: 98.w,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: const Color(0xff39A7A7)
-                                        .withOpacity(.51)),
-                                color: selectedContainerIndex == 0
-                                    ? const Color(0xffBFDFDF).withOpacity(.33)
-                                    : const Color(0xffF7F7F7).withOpacity(.12),
-                                borderRadius: BorderRadius.circular(10.r),
-                              ),
-                              child: Center(
-                                  child: Image.asset(
-                                      "assets/images/mastercard.png",
-                                      width: 49.w,
-                                      height: 41.h)),
+                          Container(
+                            height: 60.h,
+                            width: 98.w,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: const Color(0xff39A7A7)
+                                      .withOpacity(.51)),
+                              color: const Color(0xffF7F7F7).withOpacity(.12),
+                              borderRadius: BorderRadius.circular(10.r),
                             ),
+                            child: Center(
+                                child: Image.asset(
+                                    "assets/images/mastercard.png",
+                                    width: 49.w,
+                                    height: 41.h)),
                           ),
                           SizedBox(width: 8.w),
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedContainerIndex = 1;
-                              });
-                            },
-                            child: Container(
-                              height: 60.h,
-                              width: 98.w,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color:
-                                      const Color(0xff39A7A7).withOpacity(.51),
-                                ),
-                                color: selectedContainerIndex == 1
-                                    ? const Color(0xffBFDFDF).withOpacity(.33)
-                                    : const Color(0xffF7F7F7).withOpacity(.12),
-                                borderRadius: BorderRadius.circular(10),
+                          Container(
+                            height: 60.h,
+                            width: 98.w,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color:
+                                    const Color(0xff39A7A7).withOpacity(.51),
                               ),
-                              child: Center(
-                                  child: Image.asset(
-                                      "assets/images/vodafonecashe.png",
-                                      width: 41.w,
-                                      height: 41.h)),
+                              color:
+                                   const Color(0xffBFDFDF).withOpacity(.33),
+                              borderRadius: BorderRadius.circular(10),
                             ),
+                            child: Center(
+                                child: Image.asset(
+                                    "assets/images/vodafonecashe.png",
+                                    width: 41.w,
+                                    height: 41.h)),
                           ),
                         ],
                       ),

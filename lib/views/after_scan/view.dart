@@ -10,7 +10,7 @@ class AfterScanView extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: Padding(
-                padding: EdgeInsetsDirectional.symmetric(horizontal: 24.w),
+                padding: EdgeInsetsDirectional.only(start: 24.w,end: 24.w,bottom: 64.h),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -62,7 +62,6 @@ class AfterScanView extends StatelessWidget {
                       const Spacer(),
                       AppFilledButton(height: 54,
                           text: "Submit", onPressed: (){}),
-                      SizedBox(height: 64.h,)
                     ]))));
   }
 }

@@ -56,7 +56,7 @@ class _ReservationViewState extends State<ReservationView> {
                       ),
                     ),
                     VerticalDivider(
-                      color: Colors.black.withOpacity(.8),
+                      color: Colors.black.withOpacity(.08),
                       thickness: 1,
                     ),
                     Padding(
@@ -82,7 +82,7 @@ class _ReservationViewState extends State<ReservationView> {
                       ),
                     ),
                     VerticalDivider(
-                      color: Colors.black.withOpacity(.8),
+                      color: Colors.black.withOpacity(.08),
                       thickness: 1,
                     ),
                     Padding(
@@ -111,7 +111,7 @@ class _ReservationViewState extends State<ReservationView> {
                       ),
                     ),
                     VerticalDivider(
-                      color: Colors.black.withOpacity(.8),
+                      color: Colors.black.withOpacity(.08),
                       thickness: 1,
                     ),
                     Padding(
@@ -137,7 +137,7 @@ class _ReservationViewState extends State<ReservationView> {
                       ),
                     ),
                     VerticalDivider(
-                      color: Colors.black.withOpacity(.8),
+                      color: Colors.black.withOpacity(.08),
                       thickness: 1,
                     ),
                     Padding(

@@ -51,6 +51,7 @@ class ReceiptView extends StatelessWidget {
                           Text(
                             "Date:",
                             style: TextStyle(
+                                color: const Color(0xff58595B),
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: "poppins"),
@@ -74,6 +75,7 @@ class ReceiptView extends StatelessWidget {
                           Text(
                             "appointment:",
                             style: TextStyle(
+                                color: const Color(0xff58595B),
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: "poppins"),
@@ -97,6 +99,34 @@ class ReceiptView extends StatelessWidget {
                           Text(
                             "transferred to:",
                             style: TextStyle(
+                                color: const Color(0xff58595B),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: "poppins"),
+                          ),
+                          const Spacer(),
+                          Text(
+                            "",
+                            style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: "poppins"),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Divider(
+                      thickness: 1.h,
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.only(
+                          start: 24.w, end: 24.w, bottom: 9.h),
+                      child: Row(
+                        children: [
+                          Text(
+                            "Price:",
+                            style: TextStyle(
+                                color: const Color(0xff58595B),
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: "poppins"),
@@ -118,8 +148,9 @@ class ReceiptView extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            "transferred to:",
+                            "Total amount:",
                             style: TextStyle(
+                                color: const Color(0xff58595B),
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: "poppins"),
@@ -128,6 +159,7 @@ class ReceiptView extends StatelessWidget {
                           Text(
                             "",
                             style: TextStyle(
+
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
                                 fontFamily: "poppins"),
@@ -135,33 +167,13 @@ class ReceiptView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.only(
-                          start: 24.w, end: 24.w, bottom: 9.h),
-                      child: Row(
-                        children: [
-                          Text(
-                            "transferred to:",
-                            style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: "poppins"),
-                          ),
-                          const Spacer(),
-                          Text(
-                            "",
-                            style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: "poppins"),
-                          ),
-                        ],
-                      ),
+                    Divider(
+                      thickness: 1.h,
                     ),
                     const Spacer(),
                     Text("Thank You !",
                         style: TextStyle(
-                          fontSize: 18.sp,
+                            fontSize: 18.sp,
                             fontFamily: "poppins",
                             fontWeight: FontWeight.w800,
                             color: const Color(0xff58595B))),

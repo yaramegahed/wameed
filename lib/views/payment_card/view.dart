@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wameed/views/vodafone_cash/view.dart';
 
 import '../../core/design/app_dialog.dart';
 import '../../core/design/app_field_button.dart';
@@ -29,7 +30,7 @@ class _PaymentState extends State<PaymentView> {
         ),
         body: SafeArea(
             child: Padding(
-                padding: EdgeInsetsDirectional.symmetric(horizontal: 24.w),
+                padding: EdgeInsetsDirectional.only(start: 24.w,end: 24.w,bottom: 48.h),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -151,6 +152,10 @@ class _PaymentState extends State<PaymentView> {
                           SizedBox(width: 8.w),
                           GestureDetector(
                             onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const VodafoneView()));
                               setState(() {
                                 selectedContainerIndex = 1;
                               });
@@ -385,9 +390,6 @@ class _PaymentState extends State<PaymentView> {
                                   );
                                 });
                           }),
-                      SizedBox(
-                        height: 48.h,
-                      ),
                     ]))));
   }
 }

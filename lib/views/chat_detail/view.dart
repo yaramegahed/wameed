@@ -4,14 +4,14 @@ import 'package:wameed/core/design/arrow_back_button.dart';
 
 import '../../core/design/chat_message.dart';
 
-class ChatDetail extends StatefulWidget {
-  const ChatDetail({super.key});
+class ChatDetailView extends StatefulWidget {
+  const ChatDetailView({super.key});
 
   @override
-  State<ChatDetail> createState() => _ChatDetailState();
+  State<ChatDetailView> createState() => _ChatDetailState();
 }
 
-class _ChatDetailState extends State<ChatDetail> {
+class _ChatDetailState extends State<ChatDetailView> {
   List<ChatMessage> messages = [
     ChatMessage(
         messageContent: "May ask you dr for advice", messageType: "sender"),
@@ -26,7 +26,6 @@ class _ChatDetailState extends State<ChatDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         appBar: AppBar(
           shadowColor: const Color(0xff000000).withOpacity(.25),
           toolbarHeight: 100.h,
@@ -83,64 +82,103 @@ class _ChatDetailState extends State<ChatDetail> {
           ),
         ),
         body: Container(
-          color:Color(0xff39A7A7).withOpacity(.08),
-          child: Column(
-              children: <Widget>[
-
+          color: const Color(0xff39A7A7).withOpacity(.08),
+          child: Column(children: <Widget>[
+            Row(children: <Widget>[
+              Expanded(
+                child: Container(
+                    margin: EdgeInsetsDirectional.symmetric(horizontal: 15.w),
+                    child: Divider(
+                      color: Colors.black.withOpacity(.14),
+                      height: 36,
+                    )),
+              ),
+              Text("yesterday",
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "inter",
+                      color: const Color(0xff000000).withOpacity(.41))),
+              Expanded(
+                child: Container(
+                    margin: const EdgeInsets.only(left: 20.0, right: 10.0),
+                    child: Divider(
+                      color: Colors.black.withOpacity(.14),
+                      height: 36,
+                    )),
+              ),
+            ]),
             Expanded(
               child: ListView.builder(
                 itemCount: messages.length,
                 shrinkWrap: true,
-                padding:  EdgeInsets.symmetric(horizontal: 16.w,vertical: 18.h),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Row(
-                    textDirection: (messages[index].messageType == "receiver")?TextDirection.rtl:TextDirection.ltr,
+                    textDirection: (messages[index].messageType == "receiver")
+                        ? TextDirection.rtl
+                        : TextDirection.ltr,
                     children: [
-                      if(messages[index].messageType == "receiver")
+                      if (messages[index].messageType == "receiver")
                         Padding(
-                          padding:  EdgeInsetsDirectional.only(start: 8.w,bottom: 16.h),
-                          child: CircleAvatar(radius: 16,backgroundColor: Colors.green,),
+                          padding: EdgeInsetsDirectional.only(
+                              start: 8.w, bottom: 16.h),
+                          child: CircleAvatar(
+                            radius: 16.r,
+                            backgroundColor: Colors.green,
+                          ),
                         ),
                       Column(
-                        crossAxisAlignment:CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              decoration: messages[index].messageType == "receiver"?BoxDecoration(
-                                  borderRadius: BorderRadiusDirectional.only(
+                            decoration: messages[index].messageType ==
+                                    "receiver"
+                                ? BoxDecoration(
+                                    borderRadius: BorderRadiusDirectional.only(
                                       topEnd: Radius.circular(0.r),
                                       topStart: Radius.circular(10.r),
-                                 bottomEnd : Radius.circular(10.r),
-                              bottomStart: Radius.circular(10.r),),
-                                              color: (messages[index].messageType == "receiver"
-                                              ? const Color(0xff494949).withOpacity(.20)
-                                                    : const Color(0xff39A7A7)),
-                                              ):BoxDecoration(
-                                borderRadius: BorderRadiusDirectional.only(
-                                  topStart: Radius.circular(0.r),
-                                  topEnd: Radius.circular(10.r),
-                                  bottomEnd : Radius.circular(10.r),
-                                  bottomStart: Radius.circular(10.r),),
-                                color: (messages[index].messageType == "receiver"
-                                    ? const Color(0xff494949).withOpacity(.20)
-                                    : const Color(0xff39A7A7)),
+                                      bottomEnd: Radius.circular(10.r),
+                                      bottomStart: Radius.circular(10.r),
+                                    ),
+                                    color: (messages[index].messageType ==
+                                            "receiver"
+                                        ? const Color(0xff494949)
+                                            .withOpacity(.20)
+                                        : const Color(0xff39A7A7)),
+                                  )
+                                : BoxDecoration(
+                                    borderRadius: BorderRadiusDirectional.only(
+                                      topStart: Radius.circular(0.r),
+                                      topEnd: Radius.circular(10.r),
+                                      bottomEnd: Radius.circular(10.r),
+                                      bottomStart: Radius.circular(10.r),
+                                    ),
+                                    color: (messages[index].messageType ==
+                                            "receiver"
+                                        ? const Color(0xff494949)
+                                            .withOpacity(.20)
+                                        : const Color(0xff39A7A7)),
+                                  ),
+                            padding: const EdgeInsets.all(16),
+                            child: Text(
+                              messages[index].messageContent,
+                              style: TextStyle(
+                                fontSize: 15.sp,
+                                color: (messages[index].messageType ==
+                                        "receiver"
+                                    ? const Color(0xff000000).withOpacity(.62)
+                                    : const Color(0xffFFFFFF)),
                               ),
-                                              padding: const EdgeInsets.all(16),
-                                              child: Text(
-                                              messages[index].messageContent,
-                                              style: TextStyle(
-                                              fontSize: 15.sp,
-                                              color: (messages[index].messageType == "receiver"
-                                              ? const Color(0xff000000).withOpacity(.62)
-                                                    : const Color(0xffFFFFFF)),
-                                              ),
-                                              ),
-                                              ),
-                          SizedBox(height: 8.h,),
-                          Text("12:00")
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          const Text("12:00")
                         ],
                       ),
-
                     ],
                   );
                 },
@@ -152,7 +190,7 @@ class _ChatDetailState extends State<ChatDetail> {
                   alignment: Alignment.bottomLeft,
                   child: Container(
                     padding:
-                    const EdgeInsetsDirectional.only(start: 16, end: 16),
+                        const EdgeInsetsDirectional.only(start: 16, end: 16),
                     height: 64.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -161,7 +199,8 @@ class _ChatDetailState extends State<ChatDetail> {
                           BoxShadow(
                             color: Colors.black.withOpacity(0.30),
                             blurRadius: 10,
-                            offset: const Offset(2, 2),),
+                            offset: const Offset(2, 2),
+                          ),
                         ]),
                     child: Row(
                       children: <Widget>[
@@ -187,12 +226,12 @@ class _ChatDetailState extends State<ChatDetail> {
                                   hintStyle: TextStyle(
                                     color: Colors.black.withOpacity(.33),
                                   ),
-                                  fillColor: Color(0xffBEBEBE).withOpacity(.30),
+                                  fillColor: const Color(0xffBEBEBE).withOpacity(.30),
                                   filled: true,
                                   border: OutlineInputBorder(
                                       borderSide: BorderSide.none,
                                       borderRadius:
-                                      BorderRadius.circular(18.r)),
+                                          BorderRadius.circular(18.r)),
                                   suffixIcon: Icon(
                                       Icons.emoji_emotions_outlined,
                                       color: const Color(0xffBEBEBE)
@@ -200,7 +239,6 @@ class _ChatDetailState extends State<ChatDetail> {
                             ),
                           ),
                         ),
-
                         IconButton(
                           onPressed: () {},
                           icon: const Icon(

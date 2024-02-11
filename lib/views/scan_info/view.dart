@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wameed/core/design/app_field_button.dart';
 
-import '../../core/design/colors.dart';
-import '../payment_card/view.dart';
 
 class ScanView extends StatefulWidget {
   const ScanView({super.key});
@@ -18,7 +15,7 @@ class _ScanViewState extends State<ScanView> {
     return Scaffold(
         body: SafeArea(
             child: Padding(
-                padding: EdgeInsetsDirectional.symmetric(horizontal: 34.w),
+                padding: EdgeInsetsDirectional.only(start: 34.w,end: 34.w,bottom: 94.h),
                 child: Column(children: [
                   SizedBox(
                     height: 190.h,
@@ -94,9 +91,6 @@ class _ScanViewState extends State<ScanView> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 94.h,
-                  )
                 ]))));
   }
 }

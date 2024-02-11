@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/design/arrow_back_button.dart';
 import '../../core/design/colors.dart';
 
-class Zone extends StatelessWidget {
-  const Zone({super.key});
+class ZoneView extends StatelessWidget {
+  const ZoneView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,17 +59,17 @@ class Zone extends StatelessWidget {
                       padding: EdgeInsetsDirectional.only(
                           start: 6.w, end: 16.w, top: 24.h, bottom: 22.h),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.r),
+                          borderRadius: BorderRadius.circular(15.r),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                                color: const Color(0xff000000).withOpacity(.42),
-                                blurRadius: 11,
+                                color: const Color(0xff000000),
+                                blurRadius: 11.r,
                                 offset: const Offset(3, 4)),
                             BoxShadow(
                                 color: const Color(0xff39A7A7).withOpacity(.60),
                                 blurRadius: 8,
-                                offset: const Offset(-2,-2)),
+                                offset: const Offset(-2, -2)),
                             BoxShadow(
                                 color: const Color(0xff39A7A7).withOpacity(.60),
                                 blurRadius: 8,
@@ -121,7 +120,9 @@ class Zone extends StatelessWidget {
                             const Spacer(),
                             Icon(Icons.arrow_forward_ios,
                                 color: Colors.black.withOpacity(.19)),
-                            SizedBox(width: 16.w,)
+                            SizedBox(
+                              width: 16.w,
+                            )
                           ],
                         ),
                       ]),
@@ -132,23 +133,26 @@ class Zone extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          Icons.keyboard_double_arrow_left_rounded,
-                          size: 32.w,
-                        ),
-                        Text(
-                          "Swipe Left & right For next",
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontFamily: "poppins",
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).primaryColor,
+                        Image.asset("assets/images/left-arrow 2.png",
+                            height: 22.h, width: 22.w),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.symmetric(horizontal: 8.h),
+                          child: Text(
+                            "Swipe Left & right For next",
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontFamily: "poppins",
+                              fontWeight: FontWeight.w600,
+                              color: Theme.of(context).primaryColor,
+                            ),
                           ),
                         ),
-                        Icon(
-                          Icons.keyboard_double_arrow_right_rounded,
-                          size: 32.w,
-                        ),
+                        Image.asset(
+                          "assets/images/right-arrow 1.png",
+                          height: 22.h,
+                          width: 22.w,
+                        )
                       ],
                     )
                   ],

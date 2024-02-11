@@ -1,16 +1,15 @@
 
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
-import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:wameed/main.dart';
+import 'package:wameed/views/home/main/view.dart';
+import 'package:wameed/views/motivzone/view.dart';
 import '../../core/design/arrow_back_button.dart';
 import '../../core/design/colors.dart';
 import '../../core/design/text.logo.dart';
 import '../chats/view.dart';
 import '../profile/view.dart';
-import '../scan/view.dart';
+import '../scan_info/view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -20,8 +19,25 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeState extends State<HomeView> {
-  int _page = 0;
-
+  final iconList = <IconData>[
+    Icons.home,
+    Icons.message,
+    Icons.email,
+    Icons.person,
+  ];
+  int _currentIndex = 0;
+  final titleList = <String>[
+    "Home",
+    "Chats",
+    "Motivzone",
+    "Profile",
+  ];
+  List<Widget> screens = [
+    HomePage(),
+    ChatView(),
+    ZoneView(),
+    ProfileView(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,380 +46,73 @@ class _HomeState extends State<HomeView> {
         leading: const ArrowBackButton(),
         title: const TextLogo(),
       ),
-      body: SafeArea(
-        child: Padding(
-
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 24.w),
-          child: Column(
-            children: [
-              const Row(
-                children: [
-                  SizedBox(
-                    height: 32,
-                  ),
-                  Text(
-                    "All services",
-                    style: TextStyle(
-                        fontFamily: "inters",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 28.h,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color(0xffF2F2F2),
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        height: 116.h,
-                        width: 116.h,
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 32.h,
-                            ),
-                            const Icon(
-                              size: 28,
-                              Icons.groups,
-                              color: AppColors.mainColor,
-                            ),
-                            SizedBox(
-                              height: 4.h,
-                            ),
-                            Text(
-                              "Community",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "inters",
-                                fontSize: 16.sp,
-                                color: AppColors.mainColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 16.w,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: const Color(0xffF2F2F2),
-                            borderRadius: BorderRadius.circular(20)),
-                        height: 116.h,
-                        width: 116.w,
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 32.h,
-                            ),
-                            const Icon(
-                              size: 28,
-                              Icons.question_mark_outlined,
-                              color: AppColors.mainColor,
-                            ),
-                            SizedBox(
-                              height: 4.h,
-                            ),
-                            Text(
-                              "questions",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "inters",
-                                fontSize: 16.sp,
-                                color: AppColors.mainColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 16.w,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: const Color(0xffF2F2F2),
-                            borderRadius: BorderRadius.circular(20)),
-                        height: 116.h,
-                        width: 116.w,
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 32,
-                            ),
-                            const Icon(
-                              size: 28,
-                              Icons.library_books,
-                              color: AppColors.mainColor,
-                            ),
-                            SizedBox(
-                              height: 4.h,
-                            ),
-                            const Text(
-                              "Library",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "inters",
-                                fontSize: 16,
-                                color: AppColors.mainColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: const Color(0xffF2F2F2),
-                            borderRadius: BorderRadius.circular(20)),
-                        height: 116.h,
-                        width: 116.w,
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 32,
-                            ),
-                            const Icon(
-                              size: 28,
-                              Icons.gamepad,
-                              color: AppColors.mainColor,
-                            ),
-                            SizedBox(
-                              height: 4.h,
-                            ),
-                            const Text(
-                              "Puzzle",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "inters",
-                                fontSize: 16,
-                                color: AppColors.mainColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: const Color(0xffF2F2F2),
-                            borderRadius: BorderRadius.circular(20)),
-                        height: 116.h,
-                        width: 116.w,
-                        child: Column(
-                          children: [
-                            const SizedBox(
-                              height: 32,
-                            ),
-                            const Icon(
-                              size: 28,
-                              Icons.mail_rounded,
-                              color: AppColors.mainColor,
-                            ),
-                            SizedBox(
-                              height: 4.h,
-                            ),
-                            const Text(
-                              "Motivzone",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "inters",
-                                fontSize: 16,
-                                color: AppColors.mainColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              Row(
-                children: [
-                  const Text(
-                    "Top doctors",
-                    style: TextStyle(
-                        fontFamily: "inters",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  const Spacer(),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "See all",
-                        style: TextStyle(
-                            color: const Color(0xff000000).withOpacity(.40),
-                            decoration: TextDecoration.underline),
-                      )),
-                ],
-              ),
-              Expanded(
-                  child: ListView.separated(
-                      itemBuilder: (context, index) =>
-                          Container(
-                            width: double.infinity,
-                            height: 170.h,
-                            padding: EdgeInsetsDirectional.only(
-                                start: 6.w, end: 16.w, top: 24.h, bottom: 22.h),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.r),
-                                color: const Color(0xffF9F9F9),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.black.withOpacity(0.25),
-                                      blurRadius: 4,
-                                      offset: const Offset(2, 2)),
-                                ]),
-                            child: Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 36.w,
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 8.w,
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 8.h),
-                                        child: Row(
-                                          children: [
-                                            Text("Dr. John Smith",
-                                                style: TextStyle(
-                                                    fontSize: 18.sp,
-                                                    fontFamily: "inter",
-                                                    fontWeight:
-                                                    FontWeight.w600)),
-                                            const Spacer(),
-                                            const Text("4.6"),
-                                            SizedBox(
-                                              width: 4.w,
-                                            ),
-                                            const Icon(
-                                              Icons.star,
-                                              color: Colors.yellow,
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 4.h,
-                                      ),
-                                      Text("Psychiatrist",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontFamily: "poppins",
-                                              fontSize: 12,
-                                              color: Colors.black
-                                                  .withOpacity(.56))),
-                                      const Spacer(),
-                                      FilledButton(
-                                          onPressed: () {},
-                                          style: OutlinedButton.styleFrom(
-                                            minimumSize: Size(127.w, 38.h),
-                                            maximumSize:
-                                            Size(double.infinity, 54.h),
-                                            backgroundColor: Colors.transparent,
-                                            shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                BorderRadius.circular(12.r),
-                                                side: BorderSide(
-                                                    color: Theme
-                                                        .of(context)
-                                                        .primaryColor,
-                                                    style: BorderStyle.solid,
-                                                    width: 1.w)),
-                                          ),
-                                          child: Text(
-                                            "Book now",
-                                            style: TextStyle(
-                                                color: Theme.of(context).primaryColor,
-                                                fontWeight: FontWeight.w600),
-                                          ))
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                      separatorBuilder: (context, index) =>
-                          SizedBox(
-                            height: 24.h,
-                          ),
-                      itemCount: 2)),
+      body: screens[_currentIndex],
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: SizedBox(
+        width: 70.w,
+        height: 70.w,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black.withOpacity(.25),
+                  blurStyle: BlurStyle.inner,
+                  blurRadius: 8,
+                  offset: const Offset(1, 1))
             ],
+          ),
+          child: FloatingActionButton(
+            backgroundColor: const Color(0xffFAFAFA),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const ScanView()));
+            },
+            shape: const CircleBorder(),
+            child: Icon(Icons.qr_code_scanner, color: Colors.grey, size: 32.sp),
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){},
-        backgroundColor: Colors.white,
-        tooltip: "increment",
-        child: const Icon(Icons.qr_code_scanner),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.home)),
-            IconButton(onPressed: (){}, icon: Icon(Icons.chat)),
-            IconButton(onPressed: (){}, icon: Icon(Icons.person)),
-          ],
-        ),
-      )
-    );
-  }
+      bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+        height: 99.h,
+        tabBuilder: (index, isActive) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                iconList[index],
+                color: isActive ? Theme
+                    .of(context)
+                    .primaryColor : Colors.grey,
+              ),
+              SizedBox(
+                height: 4.h,
+              ),
+              Text(
+                titleList[index],
+                style: TextStyle(
+                    fontSize: 14.sp,
+                    fontFamily: "poppins",
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w500),
+              )
+            ],
+          );
+        },
+        activeIndex: _currentIndex,
+        shadow: Shadow(blurRadius: 8, color: Colors.grey.withOpacity(.35)),
+        gapLocation: GapLocation.center,
+        notchSmoothness: NotchSmoothness.smoothEdge,
+        leftCornerRadius: 20.r,
+        rightCornerRadius: 20.r,
+        onTap: (index) {
+          _currentIndex=index;
+          setState(() {
 
-  Widget _getPage(int page) {
-    switch (page) {
-      case 0:
-      // Return the widget for the Home page
-        return const HomeView();
-      case 1:
-      // Return the widget for the Scan page
-        return const ScanView();
-      case 2:
-      // Return the widget for the Chat page
-        return const ChatView();
-      case 3:
-      // Return the widget for the Personal page
-        return const ProfileView();
-      default:
-        return const HomeView();
-    }
+          });
+        },
+        itemCount: titleList.length,
+      ),
+    );
   }
 }
