@@ -20,7 +20,7 @@ class VodafoneView2 extends StatelessWidget {
                 fontWeight: FontWeight.w600)),
       ),
       body: Padding(
-        padding: EdgeInsetsDirectional.only(top: 40.h, start: 24.w, end: 24.w),
+        padding: EdgeInsetsDirectional.only(top: 40.h, start: 24.w, end: 24.w,bottom: 114.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -81,32 +81,47 @@ class VodafoneView2 extends StatelessWidget {
                   color: const Color(0xff000000).withOpacity(.73)),
             ),
             SizedBox(height: 18.h,),
-            Container(
-                height: 64.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      color:
-                      const Color(0xffD9D9D9).withOpacity(.38)),
-                  color: const Color(0xffD9D9D9).withOpacity(.38),
-                  borderRadius: BorderRadius.circular(12.r),
-                ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.only(
-                      start: 17.h, bottom: 23.h, top: 23.h),
-                  child: Text(
-                    "+543  654  876",
-                    style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: "poppins",
-                        color:
-                        const Color(0xff000000).withOpacity(.38)),
-                  ),
-                )),
+            SizedBox(
+              height: 64.h,
+              child: TextFormField(
+                keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    fillColor: const Color(0xffD9D9D9).withOpacity(.30),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12.r),
+                      borderSide: BorderSide(
+                          color: const Color(0xffD9D9D9).withOpacity(.30), width: 1.w),
+                    ),
+                  )),
+            ),
+            // Container(
+            //     height: 64.h,
+            //     width: double.infinity,
+            //     decoration: BoxDecoration(
+            //       border: Border.all(
+            //           color:
+            //           const Color(0xffD9D9D9).withOpacity(.38)),
+            //       color: const Color(0xffD9D9D9).withOpacity(.38),
+            //       borderRadius: BorderRadius.circular(12.r),
+            //     ),
+            //     child: Padding(
+            //       padding: EdgeInsetsDirectional.only(
+            //           start: 17.h, bottom: 23.h, top: 23.h),
+            //       child: Text(
+            //         "+543  654  876",
+            //         style: TextStyle(
+            //             fontSize: 12.sp,
+            //             fontWeight: FontWeight.w500,
+            //             fontFamily: "poppins",
+            //             color:
+            //             const Color(0xff000000).withOpacity(.38)),
+            //       ),
+            //     )),
             const Spacer(),
             AppFilledButton(text: "Send Receipt", onPressed: (){},height: 64.h),
-            SizedBox(height: 114.h,)
           ],
         ),
       ),

@@ -316,9 +316,12 @@ class _AppointmentState extends State<Appointment> {
                       const SizedBox(
                         height: 12,
                       ),
-                      const AppFilled(
-                        text: "",
-                        height: 48,
+                      SizedBox(
+                        height: 48.h,
+                        child: const AppFilled(
+                          text: "",
+                          height: 48,
+                        ),
                       ),
                       SizedBox(
                         height: 24.h,
@@ -334,8 +337,12 @@ class _AppointmentState extends State<Appointment> {
                       const SizedBox(
                         height: 12,
                       ),
-                      const AppFilled(
-                        text: "",
+                      SizedBox(
+                        width: double.infinity.w,
+                        height: 48.h,
+                        child: const AppFilled(
+                          text: "",
+                        ),
                       ),
                       SizedBox(
                         height: 24.h,

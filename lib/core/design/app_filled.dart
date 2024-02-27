@@ -30,21 +30,6 @@ class AppFilled extends StatelessWidget {
             color: Theme.of(context).primaryColor.withOpacity(.21),
             width: 1.w),
       ),
-
-      // style: OutlinedButton.styleFrom(
-      //   minimumSize:
-      //   Size(380.w, 48.h),
-      //   maximumSize:
-      //   Size(double.infinity, 54.h),
-      //   backgroundColor: Colors.grey.shade100,
-      //   shape: RoundedRectangleBorder(
-      //       borderRadius:
-      //       BorderRadius.circular(8.r),
-      //       side: BorderSide(
-      //           color: Theme.of(context).primaryColor.withOpacity(.29),
-      //           style: BorderStyle.solid,
-      //           width: 1.5.w)),
-      // ),
     ));
   }
 }

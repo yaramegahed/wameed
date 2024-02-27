@@ -13,13 +13,15 @@ class ReviewView extends StatefulWidget {
 
 class _ReviewViewState extends State<ReviewView> {
   late TextEditingController _ratingController;
-  double? _rating;
+  String? _rating;
+  String? _imagePath;
   final bool _isVertical = false;
 
   @override
   void initState() {
     _ratingController = TextEditingController(text: "3.0");
-    _rating = double.parse(_ratingController.text);
+    _imagePath = "assets/images/hi.png";
+
     super.initState();
   }
 
@@ -53,7 +55,7 @@ class _ReviewViewState extends State<ReviewView> {
         child: Column(
           children: [
             Padding(
-              padding:EdgeInsetsDirectional.only(bottom: 32.h),
+              padding: EdgeInsetsDirectional.only(bottom: 32.h),
               child: Text("Put your Review !",
                   style: TextStyle(
                       fontSize: 18.sp,
@@ -89,37 +91,57 @@ class _ReviewViewState extends State<ReviewView> {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsetsDirectional.only(top: 100.h,bottom: 72.w),
-                    child: Image.asset("assets/images/hi.png",height: 100.h,width: 93.w),
+                    padding:
+                        EdgeInsetsDirectional.only(top: 100.h, bottom: 72.w),
+                    child: Image.asset(_imagePath!,
+                        height: 100.h, width: 93.w),
                   ),
-                  RatingBar.builder(
-                    initialRating: _rating!,
-                    minRating: 1,
-                    direction: _isVertical ? Axis.vertical : Axis.horizontal,
+                  RatingBar(
+                    initialRating: 0,
+                    direction: Axis.horizontal,
                     allowHalfRating: true,
-                    unratedColor: const Color(0xff000000).withOpacity(.61),
                     itemCount: 5,
-                    itemSize: 32.0,
-                    itemPadding: EdgeInsets.symmetric(horizontal: 4.0.h),
-                    itemBuilder: (context, _) => Icon(
-                      Icons.star_border,
-                      color: Color(0xff000000).withOpacity(.61),
+                    ratingWidget: RatingWidget(
+                      full: const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      half: const Icon(
+                        Icons.star_half,
+                        color: Colors.amber,
+                      ),
+                      empty: const Icon(
+                        Icons.star_border,
+                        color: Colors.grey,
+                      ),
                     ),
+                    itemPadding: EdgeInsets.symmetric(horizontal: 4.h),
                     onRatingUpdate: (rating) {
+                      print(rating);
+                      if (0 < rating && rating < 2) {
+                        _rating = "Bad";
+                        _imagePath = "assets/images/bad.png";
+                      } else if (rating > 2 && rating <= 3) {
+                        _rating = "Good";
+                        _imagePath = "assets/images/good.png";
+                      } else if (rating > 3 && rating <= 4) {
+                        _rating = "Very good";
+                      } else if(rating>4) {
+                         _rating = "Excellent";
+                      }
                       setState(() {
-                        _rating = rating;
+
                       });
                     },
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 20.0.h,
                   ),
-                  _rating != null
-                      ? Text(
-                          "Rating: $_rating",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                  // if(_rating != null)
+                      Text(
+                          _rating!=null?" $_rating":"Hi",
+                          style: const TextStyle(fontWeight: FontWeight.bold),
                         )
-                      : Container(),
                 ],
               ),
             ),

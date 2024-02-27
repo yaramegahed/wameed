@@ -196,34 +196,27 @@ class _PaymentState extends State<PaymentView> {
                       SizedBox(
                         height: 16.h,
                       ),
-                      Container(
+                      SizedBox(
                         height: 54.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xff39A7A7).withOpacity(.41)),
-                          color: const Color(0xffF2F2F2),
-                          borderRadius: BorderRadius.circular(15.r),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.person,
-                                color: const Color(0xff000000).withOpacity(.36),
+                        child: TextFormField(
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.r),
                               ),
-                              Text(
-                                "",
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    fontFamily: "poppins",
-                                    color: const Color(0xff000000)
-                                        .withOpacity(.47),
-                                    fontWeight: FontWeight.w600),
+                              prefixIcon: Icon(Icons.person,color: const Color(0xff000000).withOpacity(.36),),
+                              fillColor: const Color(0xffF2F2F2),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15.r),
+                                borderSide: BorderSide(
+                                    color: const Color(0xff39A7A7).withOpacity(.41), width: 1.w),
                               ),
-                            ],
-                          ),
+                            ),
+                          style: TextStyle(
+                              fontSize: 14.sp,
+                              fontFamily: "poppins",
+                              color: const Color(0xff000000)
+                                  .withOpacity(.47),
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                       SizedBox(
@@ -240,34 +233,32 @@ class _PaymentState extends State<PaymentView> {
                       SizedBox(
                         height: 16.h,
                       ),
-                      Container(
-                        height: 54.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xff39A7A7).withOpacity(.41)),
-                          color: const Color(0xffF2F2F2),
+                SizedBox(
+                    height: 54.h,
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15.r),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Row(
-                            children: [
-                              Image.asset("assets/images/mastercard.png",
-                                  width: 16.w, height: 16.h),
-                              Text(
-                                "",
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    fontFamily: "poppins",
-                                    color: const Color(0xff000000)
-                                        .withOpacity(.47),
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ],
-                          ),
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 14,vertical: 14),
+                          child: Image.asset("assets/images/mastercard.png",width: 16.w,height: 16.h,fit: BoxFit.scaleDown),
+                        ),
+                        fillColor: const Color(0xffF2F2F2),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15.r),
+                          borderSide: BorderSide(
+                              color: const Color(0xff39A7A7).withOpacity(.41), width: 1.w),
                         ),
                       ),
+                      style: TextStyle(
+                          fontSize: 14.sp,
+                          fontFamily: "poppins",
+                          color: const Color(0xff000000)
+                              .withOpacity(.47),
+                          fontWeight: FontWeight.w600),
+                    )),
                       SizedBox(
                         height: 32.h,
                       ),
@@ -288,32 +279,28 @@ class _PaymentState extends State<PaymentView> {
                               SizedBox(
                                 height: 16.h,
                               ),
-                              Container(
+                              SizedBox(
                                 height: 48.h,
                                 width: 78.w,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: const Color(0xff39A7A7)
-                                          .withOpacity(.29)),
-                                  color:
-                                      const Color(0xffD9D9D9).withOpacity(.21),
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "",
-                                        style: TextStyle(
-                                            fontSize: 14.sp,
-                                            fontFamily: "poppins",
-                                            color: const Color(0xff000000)
-                                                .withOpacity(.47),
-                                            fontWeight: FontWeight.w600),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.number,
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10.r),
                                       ),
-                                    ],
-                                  ),
+                                      fillColor: const Color(0xffF2F2F2),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10.r),
+                                        borderSide: BorderSide(
+                                            color: const Color(0xff39A7A7).withOpacity(.29), width: 1.w),
+                                      ),
+                                    ),
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontFamily: "poppins",
+                                      color: const Color(0xff000000)
+                                          .withOpacity(.47),
+                                      fontWeight: FontWeight.w600),
                                 ),
                               ),
                             ],
@@ -336,32 +323,28 @@ class _PaymentState extends State<PaymentView> {
                               SizedBox(
                                 height: 16.h,
                               ),
-                              Container(
+                              SizedBox(
                                 height: 48.h,
                                 width: 78.w,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: const Color(0xff39A7A7)
-                                          .withOpacity(.29)),
-                                  color:
-                                      const Color(0xffD9D9D9).withOpacity(.21),
-                                  borderRadius: BorderRadius.circular(10.r),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(12.0),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "",
-                                        style: TextStyle(
-                                            fontSize: 14.sp,
-                                            fontFamily: "poppins",
-                                            color: const Color(0xff000000)
-                                                .withOpacity(.47),
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
+                                child: TextFormField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.r),
+                                    ),
+                                    fillColor: const Color(0xffF2F2F2),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10.r),
+                                      borderSide: BorderSide(
+                                          color: const Color(0xff39A7A7).withOpacity(.29), width: 1.w),
+                                    ),
                                   ),
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontFamily: "poppins",
+                                      color: const Color(0xff000000)
+                                          .withOpacity(.47),
+                                      fontWeight: FontWeight.w600),
                                 ),
                               ),
                             ],

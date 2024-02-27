@@ -17,6 +17,7 @@ import 'package:wameed/views/profile/view.dart';
 import 'package:wameed/views/receipt/view.dart';
 import 'package:wameed/views/reservation_receipts/view.dart';
 import 'package:wameed/views/setting_patient/view.dart';
+import 'package:wameed/views/voafone_cash2/view.dart';
 import 'package:wameed/views/vodafone_cash/view.dart';
 
 void main() {
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
               background: Color(0xff39A7A7),
             )
         ),
-        home: const ChatDetailView(),
+        home: const ReviewView(),
       ),
 
     );

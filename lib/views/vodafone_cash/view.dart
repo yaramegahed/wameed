@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wameed/views/payment_card/view.dart';
 import 'package:wameed/views/voafone_cash2/view.dart';
 
 import '../../core/design/arrow_back_button.dart';
@@ -12,8 +13,6 @@ class VodafoneView extends StatefulWidget {
 }
 
 class _PaymentState extends State<VodafoneView> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,21 +133,30 @@ class _PaymentState extends State<VodafoneView> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            height: 60.h,
-                            width: 98.w,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: const Color(0xff39A7A7)
-                                      .withOpacity(.51)),
-                              color: const Color(0xffF7F7F7).withOpacity(.12),
-                              borderRadius: BorderRadius.circular(10.r),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PaymentView()));
+                            },
+                            child: Container(
+                              height: 60.h,
+                              width: 98.w,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: const Color(0xff39A7A7)
+                                        .withOpacity(.51)),
+                                color: const Color(0xffF7F7F7).withOpacity(.12),
+                                borderRadius: BorderRadius.circular(10.r),
+                              ),
+                              child: Center(
+                                  child: Image.asset(
+                                      "assets/images/mastercard.png",
+                                      width: 49.w,
+                                      height: 41.h)),
                             ),
-                            child: Center(
-                                child: Image.asset(
-                                    "assets/images/mastercard.png",
-                                    width: 49.w,
-                                    height: 41.h)),
                           ),
                           SizedBox(width: 8.w),
                           Container(
@@ -156,11 +164,9 @@ class _PaymentState extends State<VodafoneView> {
                             width: 98.w,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                color:
-                                    const Color(0xff39A7A7).withOpacity(.51),
+                                color: const Color(0xff39A7A7).withOpacity(.51),
                               ),
-                              color:
-                                   const Color(0xffBFDFDF).withOpacity(.33),
+                              color: const Color(0xffBFDFDF).withOpacity(.33),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
@@ -240,7 +246,8 @@ class _PaymentState extends State<VodafoneView> {
                         child: Row(
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.only(top: 14.h,bottom: 14.h,start: 17.w),
+                              padding: EdgeInsetsDirectional.only(
+                                  top: 14.h, bottom: 14.h, start: 17.w),
                               child: Text(
                                 "upload the receipt",
                                 style: TextStyle(
@@ -252,8 +259,10 @@ class _PaymentState extends State<VodafoneView> {
                             ),
                             const Spacer(),
                             IconButton(
-                              onPressed: (){
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const VodafoneView2(),));
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const VodafoneView2(),
+                                ));
                               },
                               icon: const Icon(Icons.arrow_forward_ios),
                               color: const Color(0xff000000).withOpacity(.60),
